@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  string x;
+   cin>>x;
+
+  int s=x.size();
+int i=0;
+     int z=x.size();
+  string a=x;
+    while(s!=0){
+        for(int y=z-1;y>1;y--){
+            swap(x[y],x[y-1]);
+
+            if(x==a)break;
+            else cout<<x<<endl;
+        }
+
+    if(a==x){
+    swap(x[0],x[i+1]);
+     s--;
+      i++;
+a=x;
+if(s==0)break;
+cout<<x<<endl;
+
+    }
+
+    }
+}
