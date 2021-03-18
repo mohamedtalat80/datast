@@ -46,15 +46,3 @@ int main()
     permutation(x);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
