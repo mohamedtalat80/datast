@@ -1,0 +1,60 @@
+#include <iostream>
+#include<string>
+using namespace std;
+string x;
+int s;
+int i=0;
+int z;
+string a;
+
+void help(int s)
+{
+    if(s==0)
+        return;
+    for(int y=z-1; y>1; y--)
+    {
+        swap(x[y],x[y-1]);
+        if(x==a)
+            break;
+        else
+            cout<<x<<endl;
+    }
+
+    if(a==x)
+    {
+        swap(x[0],x[i+1]);
+        s--;
+        i++;
+        a=x;
+        if(s==0)
+            return;
+        cout<<x<<endl;
+    }
+    help(s);
+}
+void permutation(string x)
+{
+    s=x.size();
+    z=x.size();
+    a=x;
+    help(s);
+}
+int main()
+{
+
+    cin>>x;
+    permutation(x);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
