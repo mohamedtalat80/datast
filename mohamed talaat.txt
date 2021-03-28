@@ -1,0 +1,104 @@
+#include <iostream>
+#include<string>
+using namespace std;
+int const cap =7;
+class list
+{
+    int Size ;
+    int data[cap];
+public:
+//    int getlist(int index);
+//    void push_back_list(int v);
+//    void frontbacklist(int index,int v,int pos);
+//    bool removelist (int index);
+//    int getsize;
+
+    list()
+    {
+        Size=0;
+    }
+    bool setlist(int index,int v )
+    {
+        int Ind=index-1;
+        if(Ind>=cap|| Ind<0 )
+        {
+            return false;
+        }
+        data[index]=v;
+        {
+            return true;
+        }
+
+
+    }
+    int getlist(int index)
+    {
+        int Ind=index-1;
+        if ((Ind = Size) || (Ind <0&&Size==0))
+        {
+            cout<<"invalid value"<<endl;
+        }
+        return data[Ind];
+    }
+    void push_back_list(int v)
+    {
+        data[Size]=v;
+        if(Size==cap)
+            return;
+        Size++;
+    }
+    void frontbacklist(int v)// -123----
+    {
+
+
+        for (int pos=Size-1; pos>=0; pos--)
+            data[pos+1]=data[pos];
+        data[0]= v;
+        Size++;
+
+
+    }
+    bool removelist (int index)
+    {
+        int Ind=index-1;
+        if (( Ind >= Size) || (Ind <0))
+        {
+            cout<<"the value is not found "<<endl;
+            return false;
+        }
+        if (Size==0)
+            cout<<"the list is empty "<<endl;
+        for (int pos=Ind; pos<Size-1; pos++)
+            data[pos]=data[pos+1];
+        Size--;
+    }
+    int getsize()
+    {
+        return Size;
+    }
+    void print(){
+    for(int x=0;x<=Size-1;x++)
+    {
+        cout<<data[x]<<endl;
+    }
+    }
+};
+int main()
+{
+
+    class list l;
+    l.push_back_list(1);
+    l.push_back_list(2);
+    l.push_back_list(3);
+     l.push_back_list(1);
+          l.push_back_list(1);
+
+    l.push_back_list(2);
+    l.push_back_list(3);
+     l.push_back_list(3);
+    l.frontbacklist(4);
+    l.frontbacklist(4);
+l.removelist(4);
+l.print();
+}
+
