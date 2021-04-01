@@ -1,0 +1,83 @@
+#include<iostream>
+using namespace std;
+int const cap=50;//capacity of array
+class stack
+{
+public:
+    int top;
+    int arr[cap];
+    stack ()
+    {
+        int top=-1;
+    }
+    bool isEmpty()
+    {
+        if(top==-1)
+            return true;
+        else
+            return false;
+    }
+    bool isFull()
+    {
+        if(top==cap-1)
+            return true;
+        else
+            return false;
+    }
+    void push (int val)
+    {
+        if(isFull())
+        {
+            cout<<"the stack is full..."<<endl;
+        }
+        else
+            top++;
+        arr[top]=val;
+
+    }
+    void pop ()
+    {
+        if(isEmpty())
+        {
+            cout<<"the stack is empty..."<<endl;
+        }
+        else
+            top--;
+
+    }
+    int Top ()
+    {
+        return arr[top];
+    }
+    int findmin()
+    {
+        if (isEmpty())
+        {
+            cout<<"the stack is empty"<<endl;
+            return -1;
+        }
+        else
+        {
+            int h= arr [0];
+            for(int i =0; i<top; i++)
+            {
+                if (arr[i]<h)
+                {
+                    h=arr[i];
+                }
+            }
+            return h;
+        }
+    }
+};
+int main ()
+{
+    int x ;
+    stack s ;
+    s.push(2);
+    s.push(3);
+    s.push(8);
+    s.push(6);
+    cout<<s.Top()<<endl;
+    cout<<s.findmin();
+}
